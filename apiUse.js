@@ -65,29 +65,7 @@ function generarAvatar() {
   const colorRopa = "&clothesColor=" + document.querySelector('input[name="colorRopa"]:checked')?.value;
   const temaRopa = "&clothingGraphic=" + document.getElementById("tema").value;
 
-  const url = `https://api.dicebear.com/9.x/avataaars/svg?seed=
-  ${nombre}
-  ${colorSeleccionado}
-  ${voltear}
-  ${rotacion}
-  ${zoom}
-  ${cejas}
-  ${ojos}
-  ${boca}
-  ${colorGafas}
-  ${gafas}
-  ${barba}
-  ${colorBarba}
-  ${pelo}
-  ${colorPelo}
-  ${sombrero}
-  ${colorSombrero}
-  &accessoriesProbability=${probabilidadGafas}
-  ${colorRopa}
-  ${ropa}
-  ${temaRopa}
-  &facialHairProbability=${probabilidadBarba}
-  &radius=50`;
+  const url = `https://api.dicebear.com/9.x/avataaars/svg?seed=${nombre}${colorSeleccionado}${voltear}${rotacion}${zoom}${cejas}${ojos}${boca}${colorGafas}${gafas}${barba}${colorBarba}${pelo}${colorPelo}${sombrero}${colorSombrero}&accessoriesProbability=${probabilidadGafas}${colorRopa}${ropa}${temaRopa}&facialHairProbability=${probabilidadBarba}&radius=50`;
 
   fetch(url)
     .then((response) => response.text())
