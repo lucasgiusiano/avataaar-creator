@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+    <title>AvatartTest</title>
+    <script src="apiUse.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h2>Personaliza tu Avatar</h2>
+
+      <div class="form-group">
+        <label for="nombre">Nombre único:</label>
+        <input type="text" id="nombre" placeholder="ej: juan123" />
+      </div>
+
+      <div class="personalizables">
+        <div class="personalizable">
+          <h2>Posición</h2>
+
+          <div class="form-group">
+            <div class="switch-item">
+              <label class="switch">
+                <input type="checkbox" id="voltear" />
+                <span class="slider"></span>
+              </label>
+              <p>Voltear</p>
+            </div>
+          </div>
+
+          <div class="slider-container">
+            <label for="rotacion">Ángulo:</label>
+            <div>
+              <input type="range" id="rotacion" min="0" max="360" value="0" step="10" />
+              <span id="valor">0°</span>
+            </div>
+          </div>
+
+          <div class="slider-container">
+            <label for="zoom">Zoom:</label>
+            <div>
+              <input type="range" id="zoom" min="100" max="200" value="0" step="10" />
+              <span id="valorZoom">0%</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="personalizable">
+          <h2>Estetica</h2>
+
+          <div class="colorPiel">
+            <label for="">Color de piel:</label>
+            <div class="color-picker">
+              <label class="color-option" style="background-color: #614335">
+                <input type="radio" name="colorPiel" value="614335" checked />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #ae5d29">
+                <input type="radio" name="colorPiel" value="ae5d29" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #d08b5b">
+                <input type="radio" name="colorPiel" value="d08b5b" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #edb98a">
+                <input type="radio" name="colorPiel" value="edb98a" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #f8d25c">
+                <input type="radio" name="colorPiel" value="f8d25c" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #fd9841">
+                <input type="radio" name="colorPiel" value="fd9841" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #ffdbb4">
+                <input type="radio" name="colorPiel" value="ffdbb4" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="cejas">Cejas:</label>
+            <select id="cejas">
+              <option value="angry">Enojado</option>
+              <option value="angryNatural">Enojado (Natural)</option>
+              <option value="default">Predeterminado</option>
+              <option value="defaultNatural">Predeterminado (Natural)</option>
+              <option value="flatNatural">Plano (Natural)</option>
+              <option value="frownNatural">Ceño fruncido (Natural)</option>
+              <option value="raisedExcited">Levantado (Emocionado)</option>
+              <option value="raisedExcitedNatural">Levantado (Emocionado Natural)</option>
+              <option value="sadConcerned">Triste / Preocupado</option>
+              <option value="sadConcernedNatural">Triste / Preocupado (Natural)</option>
+              <option value="unibrowNatural">Una sola ceja (Natural)</option>
+              <option value="upDown" selected>Sube y baja</option>
+              <option value="upDownNatural">Sube y baja (Natural)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="ojos">Ojos:</label>
+            <select id="ojos">
+              <option value="closed">Cerrados</option>
+              <option value="cry">Llorando</option>
+              <option value="default">Predeterminado</option>
+              <option value="eyeRoll">Ojos en blanco</option>
+              <option value="happy">Feliz</option>
+              <option value="hearts">Corazones</option>
+              <option value="side">Mirando de lado</option>
+              <option value="squint">Entrecerrados</option>
+              <option value="surprised">Sorprendido</option>
+              <option value="wink" selected>Guiño</option>
+              <option value="winkWacky">Guiño loco</option>
+              <option value="xDizzy">X / Mareado</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="boca">Boca:</label>
+            <select id="boca">
+              <option value="concerned">Preocupado</option>
+              <option value="default">Predeterminado</option>
+              <option value="disbelief">Incrédulo</option>
+              <option value="eating">Comiendo</option>
+              <option value="grimace">Mueca</option>
+              <option value="sad">Triste</option>
+              <option value="screamOpen">Gritando</option>
+              <option value="serious">Serio</option>
+              <option value="smile">Sonriendo</option>
+              <option value="tongue" selected>Sacando la lengua</option>
+              <option value="twinkle">Brillante</option>
+              <option value="vomit">Vómito</option>
+            </select>
+          </div>
+
+          <div class="color-picker">
+            <label class="color-option" style="background-color: #b6e3f4">
+              <input type="radio" name="colorFondo" value="b6e3f4" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #c0aede">
+              <input type="radio" name="colorFondo" value="c0aede" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #d1d4f9">
+              <input type="radio" name="colorFondo" value="d1d4f9" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffd5dc">
+              <input type="radio" name="colorFondo" value="ffd5dc" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffdfbf">
+              <input type="radio" name="colorFondo" value="ffdfbf" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #a8d0e6">
+              <input type="radio" name="colorFondo" value="a8d0e6" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #f3d1b0">
+              <input type="radio" name="colorFondo" value="f3d1b0" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #f4f1d9">
+              <input type="radio" name="colorFondo" value="f4f1d9" />
+              <span></span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="barba">Barba:</label>
+            <select id="barba">
+              <option value="">Sin bello facial</option>
+              <option value="beardLight">Barba ligera</option>
+              <option value="beardMajestic">Barba majestuosa</option>
+              <option value="beardMedium">Barba media</option>
+              <option value="moustacheFancy">Bigote elegante</option>
+              <option value="moustacheMagnum">Bigote Magnum</option>
+            </select>
+          </div>
+
+          <div class="color-picker">
+            <label class="color-option" style="background-color: #2c1b18">
+              <input type="radio" name="colorBarba" value="2c1b18" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #4a312c">
+              <input type="radio" name="colorBarba" value="4a312c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #724133">
+              <input type="radio" name="colorBarba" value="724133" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #a55728">
+              <input type="radio" name="colorBarba" value="a55728" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #b58143">
+              <input type="radio" name="colorBarba" value="b58143" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #c93305">
+              <input type="radio" name="colorBarba" value="c93305" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #d6b370">
+              <input type="radio" name="colorBarba" value="d6b370" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #e8e1e1">
+              <input type="radio" name="colorBarba" value="e8e1e1" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ecdcbf">
+              <input type="radio" name="colorBarba" value="ecdcbf" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #f59797">
+              <input type="radio" name="colorBarba" value="f59797" />
+              <span></span>
+            </label>
+          </div>
+
+          <div class="form-group" id="pelo">
+            <label for="cabello">Cabello:</label>
+            <select id="cabello">
+              <option value="bigHair">Voluminoso</option>
+              <option value="bob">Bob</option>
+              <option value="bun">Moño</option>
+              <option value="curly">Rizado</option>
+              <option value="curvy">Ondulado</option>
+              <option value="dreads">Rastas</option>
+              <option value="dreads01">Rastas 01</option>
+              <option value="dreads02">Rastas 02</option>
+              <option value="frida">Frida</option>
+              <option value="frizzle">Esponjado</option>
+              <option value="fro">Afro</option>
+              <option value="froBand">Afro con banda</option>
+              <option value="longButNotTooLong">Largo (no tanto)</option>
+              <option value="miaWallace">Mia Wallace</option>
+              <option value="shaggy">Desordenado</option>
+              <option value="shaggyMullet">Mullet desordenado</option>
+              <option value="shavedSides">Laterales rapados</option>
+              <option value="shortCurly">Corto rizado</option>
+              <option value="shortFlat">Corto plano</option>
+              <option value="shortRound">Corto redondeado</option>
+              <option value="shortWaved">Corto ondulado</option>
+              <option value="sides">Laterales</option>
+              <option value="straight01">Liso 01</option>
+              <option value="straight02">Liso 02</option>
+              <option value="straightAndStrand">Liso con mechas</option>
+              <option value="theCaesar">El César</option>
+              <option value="theCaesarAndSidePart">César con línea lateral</option>
+            </select>
+          </div>
+
+          <div class="color-picker" id="colorCabello">
+            <label class="color-option" style="background-color: #2c1b18">
+              <input type="radio" name="colorPelo" value="2c1b18" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #4a312c">
+              <input type="radio" name="colorPelo" value="4a312c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #724133">
+              <input type="radio" name="colorPelo" value="724133" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #a55728">
+              <input type="radio" name="colorPelo" value="a55728" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #b58143">
+              <input type="radio" name="colorPelo" value="b58143" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #c93305">
+              <input type="radio" name="colorPelo" value="c93305" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #d6b370">
+              <input type="radio" name="colorPelo" value="d6b370" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #e8e1e1">
+              <input type="radio" name="colorPelo" value="e8e1e1" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ecdcbf">
+              <input type="radio" name="colorPelo" value="ecdcbf" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #f59797">
+              <input type="radio" name="colorPelo" value="f59797" />
+              <span></span>
+            </label>
+          </div>
+        </div>
+
+        <div class="personalizable">
+          <h2>Accesorios</h2>
+
+          <div class="form-group">
+            <label for="gafas">Gafas:</label>
+            <select id="gafas">
+              <option value="" selected>Sin gafas</option>
+              <option value="eyepatch">Parche en el ojo</option>
+              <option value="kurt">Estilo Kurt</option>
+              <option value="prescription01">Lentes recetados 01</option>
+              <option value="prescription02">Lentes recetados 02</option>
+              <option value="round">Redondos</option>
+              <option value="sunglasses">Gafas de sol</option>
+              <option value="wayfarers">Estilo Wayfarer</option>
+            </select>
+          </div>
+
+          <div class="color-picker" id="colorGafas">
+            <label class="color-option" style="background-color: #3c4f5c">
+              <input type="radio" name="colorGafas" value="3c4f5c" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #65c9ff">
+              <input type="radio" name="colorGafas" value="65c9ff" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #5199e4">
+              <input type="radio" name="colorGafas" value="5199e4" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #25557c">
+              <input type="radio" name="colorGafas" value="25557c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #929598">
+              <input type="radio" name="colorGafas" value="929598" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff5c5c">
+              <input type="radio" name="colorGafas" value="ff5c5c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff488e">
+              <input type="radio" name="colorGafas" value="ff488e" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffafb9">
+              <input type="radio" name="colorGafas" value="ffafb9" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffffb1">
+              <input type="radio" name="colorGafas" value="ffffb1" />
+              <span></span>
+            </label>
+          </div>
+
+          <div class="form-group">
+            <label for="ropa">Ropa:</label>
+            <select id="ropa">
+              <option value="blazerAndShirt">Saco y camisa</option>
+              <option value="blazerAndSweater">Saco y suéter</option>
+              <option value="collarAndSweater">Cuello y suéter</option>
+              <option value="graphicShirt">Remera con gráfico</option>
+              <option value="hoodie">Buzo con capucha</option>
+              <option value="overall">Jardinero</option>
+              <option value="shirtCrewNeck">Remera cuello redondo</option>
+              <option value="shirtScoopNeck">Remera cuello en U</option>
+              <option value="shirtVNeck">Remera cuello en V</option>
+            </select>
+          </div>
+
+          <div class="color-picker" id="colorRopa">
+            <label class="color-option" style="background-color: #3c4f5c">
+              <input type="radio" name="colorRopa" value="3c4f5c" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #65c9ff">
+              <input type="radio" name="colorRopa" value="65c9ff" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #5199e4">
+              <input type="radio" name="colorRopa" value="5199e4" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #25557c">
+              <input type="radio" name="colorRopa" value="25557c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #929598">
+              <input type="radio" name="colorRopa" value="929598" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff5c5c">
+              <input type="radio" name="colorRopa" value="ff5c5c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff488e">
+              <input type="radio" name="colorRopa" value="ff488e" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffafb9">
+              <input type="radio" name="colorRopa" value="ffafb9" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffffb1">
+              <input type="radio" name="colorRopa" value="ffffb1" />
+              <span></span>
+            </label>
+          </div>
+
+          <div class="form-group" id="temaGrafico">
+            <label for="tema">Tema:</label>
+            <select id="tema">
+              <option value="bat">Murciélago</option>
+              <option value="bear">Oso</option>
+              <option value="cumbia">Cumbia</option>
+              <option value="deer">Ciervo</option>
+              <option value="diamond">Diamante</option>
+              <option value="hola">Hola</option>
+              <option value="pizza">Pizza</option>
+              <option value="resist">Resistencia</option>
+              <option value="skull">Calavera</option>
+              <option value="skullOutline">Contorno de calavera</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="gorros">Sombreros:</label>
+            <select id="gorros">
+              <option value="">Sin sombrero</option>
+              <option value="hat">Sombrero</option>
+              <option value="hijab">Hiyab</option>
+              <option value="turban">Turbante</option>
+              <option value="winterHat1">Gorro de invierno 1</option>
+              <option value="winterHat02">Gorro de invierno 2</option>
+              <option value="winterHat03">Gorro de invierno 3</option>
+              <option value="winterHat04">Gorro de invierno 4</option>
+            </select>
+          </div>
+
+          <div class="color-picker" id="colorSombrero">
+            <label class="color-option" style="background-color: #3c4f5c">
+              <input type="radio" name="colorSombrero" value="3c4f5c" checked />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #65c9ff">
+              <input type="radio" name="colorSombrero" value="65c9ff" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #5199e4">
+              <input type="radio" name="colorSombrero" value="5199e4" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #25557c">
+              <input type="radio" name="colorSombrero" value="25557c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #929598">
+              <input type="radio" name="colorSombrero" value="929598" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff5c5c">
+              <input type="radio" name="colorSombrero" value="ff5c5c" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ff488e">
+              <input type="radio" name="colorSombrero" value="ff488e" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffafb9">
+              <input type="radio" name="colorSombrero" value="ffafb9" />
+              <span></span>
+            </label>
+            <label class="color-option" style="background-color: #ffffb1">
+              <input type="radio" name="colorSombrero" value="ffffb1" />
+              <span></span>
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div id="avatar" class="preview svg-container">
+        <!-- Avatar generado aparecerá acá -->
+      </div>
+    </div>
+  </body>
+</html>

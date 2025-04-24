@@ -1,0 +1,322 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  background-color: #131F24;
+  display: flex;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  padding: 70px 0;
+}
+
+h2{
+  margin-top: 20px;
+}
+
+.personalizables h2 {
+  margin-top: 10px;
+}
+.container {
+  background-color: #23353C;
+  padding: 0 10px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  color: white;
+  text-align: center;
+}
+
+.colorPiel {
+  text-align: start;
+}
+
+.colorPiel div {
+  margin-top: 0;
+}
+
+.form-group {
+  margin-top: 10px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  box-sizing: border-box;
+  background-color: #131f24;
+  color: white;
+}
+
+.preview {
+  margin-top: 20px;
+}
+
+.preview svg {
+  width: 280px;
+  height: 280px;
+}
+
+.color-picker {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.color-option {
+  position: relative;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.color-option input {
+  display: none;
+}
+
+.color-option span {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: block;
+}
+
+/* Tick visible solo cuando está seleccionado */
+.color-option input:checked+span::after {
+  content: "✓";
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  text-shadow: 0 0 4px black;
+}
+
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  margin: 0;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #131f24;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider::before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked+.slider {
+  background-color: #4caf50;
+}
+
+input:checked+.slider::before {
+  transform: translateX(26px);
+}
+
+.switch-item {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.switch-item p {
+  margin-left: 15px;
+}
+
+.slider-container {
+  width: 250px;
+  margin-bottom: 10px;
+}
+
+.slider-container div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slider-container span {
+  width: 10%;
+}
+
+/* Estilos para el input de tipo range */
+input[type="range"] {
+  -webkit-appearance: none;
+  /* Elimina el estilo por defecto en algunos navegadores */
+  appearance: none;
+  width: 85%;
+  /* Ajusta el tamaño del slider */
+  height: 10px;
+  /* Ajusta el grosor de la barra */
+  border-radius: 15px;
+  /* Bordes redondeados */
+  background: #131F24;
+  /* Color de fondo de la barra */
+  cursor: pointer;
+  /* Cambia el cursor cuando pasa sobre el slider */
+}
+
+/* Estilos para el track (barra de fondo) en Webkit (Chrome, Safari, etc.) */
+input[type="range"]::-webkit-slider-runnable-track {
+  background: #131F24;
+  /* Color de la barra de fondo */
+  height: 10px;
+  border-radius: 15px;
+}
+
+/* Estilos para el thumb (pulgar o parte deslizable) en Webkit */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Elimina el estilo por defecto */
+  appearance: none;
+  width: 15px;
+  /* Ancho del "thumb" */
+  height: 15px;
+  /* Altura del "thumb" */
+  margin-top: -3px;
+  /* Esto centra el thumb verticalmente respecto al track */
+  border-radius: 50%;
+  /* Hace que el "thumb" sea redondo */
+  background: #ffffff;
+  /* Color del "thumb" */
+  cursor: pointer;
+  /* Cambia el cursor cuando pasa sobre el thumb */
+  transition: background-color 0.2s ease;
+  /* Transición suave cuando se cambia el color */
+}
+
+/* Estilos para el track (barra de fondo) en Firefox */
+input[type="range"]::-moz-range-track {
+  background: #ddd;
+  /* Color de la barra de fondo */
+  height: 10px;
+  border-radius: 5px;
+}
+
+/* Estilos para el thumb (pulgar o parte deslizable) en Firefox */
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  /* Ancho del "thumb" */
+  height: 20px;
+  /* Altura del "thumb" */
+  border-radius: 50%;
+  /* Hace que el "thumb" sea redondo */
+  background: #4caf50;
+  /* Color del "thumb" */
+  cursor: pointer;
+  /* Cambia el cursor cuando pasa sobre el thumb */
+}
+
+/* Estilos para el track (barra de fondo) en IE/Edge */
+input[type="range"]::-ms-track {
+  background: #ddd;
+  /* Color de la barra de fondo */
+  height: 10px;
+  border-radius: 5px;
+  border-color: transparent;
+  /* Elimina el borde del track en IE */
+  border-width: 0;
+  /* Elimina el borde del track en IE */
+}
+
+/* Estilos para el thumb (pulgar o parte deslizable) en IE/Edge */
+input[type="range"]::-ms-thumb {
+  width: 20px;
+  /* Ancho del "thumb" */
+  height: 20px;
+  /* Altura del "thumb" */
+  border-radius: 50%;
+  /* Hace que el "thumb" sea redondo */
+  background: #4caf50;
+  /* Color del "thumb" */
+  cursor: pointer;
+  /* Cambia el cursor cuando pasa sobre el thumb */
+}
+
+.personalizables {
+  display: flex;
+  justify-content: space-around;
+}
+
+.personalizable {
+  margin: 0 10px;
+}
+
+.svg-container {
+  position: relative;
+  display: inline-block;
+  margin: 20px 0;
+}
+
+.download-btn {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  padding: 8px 12px;
+  background: #1d19195e;
+  color: #fff;
+  border: none;
+  border-radius: 1000px;
+  cursor: pointer;
+  pointer-events: none;
+  /* Evita que se pueda hacer click cuando es invisible */
+}
+
+.download-btn i {
+  font-size: 70px;
+}
+
+.svg-container:hover .download-btn {
+  opacity: 1;
+  pointer-events: auto;
+}
