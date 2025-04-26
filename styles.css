@@ -29,11 +29,12 @@ h2{
   text-align: center;
 }
 
-.colorPiel {
+.colorPickerDistrubution {
   text-align: start;
+  margin-top: 5px;
 }
 
-.colorPiel div {
+.colorPickerDistrubution div {
   margin-top: 0;
 }
 

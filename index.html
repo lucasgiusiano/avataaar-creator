@@ -51,7 +51,45 @@
         <div class="personalizable">
           <h2>Estetica</h2>
 
-          <div class="colorPiel">
+          <div class="colorPickerDistrubution">
+            <label for="">Color de fondo:</label>
+            <div class="color-picker">
+              <label class="color-option" style="background-color: #b6e3f4">
+                <input type="radio" name="colorFondo" value="b6e3f4" checked />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #c0aede">
+                <input type="radio" name="colorFondo" value="c0aede" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #d1d4f9">
+                <input type="radio" name="colorFondo" value="d1d4f9" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #ffd5dc">
+                <input type="radio" name="colorFondo" value="ffd5dc" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #ffdfbf">
+                <input type="radio" name="colorFondo" value="ffdfbf" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #a8d0e6">
+                <input type="radio" name="colorFondo" value="a8d0e6" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #f3d1b0">
+                <input type="radio" name="colorFondo" value="f3d1b0" />
+                <span></span>
+              </label>
+              <label class="color-option" style="background-color: #f4f1d9">
+                <input type="radio" name="colorFondo" value="f4f1d9" />
+                <span></span>
+              </label>
+            </div>
+          </div>
+
+          <div class="colorPickerDistrubution">
             <label for="">Color de piel:</label>
             <div class="color-picker">
               <label class="color-option" style="background-color: #614335">
@@ -88,9 +126,9 @@
           <div class="form-group">
             <label for="cejas">Cejas:</label>
             <select id="cejas">
+              <option value="default" selected>Predeterminado</option>
               <option value="angry">Enojado</option>
               <option value="angryNatural">Enojado (Natural)</option>
-              <option value="default">Predeterminado</option>
               <option value="defaultNatural">Predeterminado (Natural)</option>
               <option value="flatNatural">Plano (Natural)</option>
               <option value="frownNatural">Ceño fruncido (Natural)</option>
@@ -99,7 +137,7 @@
               <option value="sadConcerned">Triste / Preocupado</option>
               <option value="sadConcernedNatural">Triste / Preocupado (Natural)</option>
               <option value="unibrowNatural">Una sola ceja (Natural)</option>
-              <option value="upDown" selected>Sube y baja</option>
+              <option value="upDown">Sube y baja</option>
               <option value="upDownNatural">Sube y baja (Natural)</option>
             </select>
           </div>
@@ -107,16 +145,16 @@
           <div class="form-group">
             <label for="ojos">Ojos:</label>
             <select id="ojos">
+              <option value="default" selected>Predeterminado</option>
               <option value="closed">Cerrados</option>
               <option value="cry">Llorando</option>
-              <option value="default">Predeterminado</option>
               <option value="eyeRoll">Ojos en blanco</option>
               <option value="happy">Feliz</option>
               <option value="hearts">Corazones</option>
               <option value="side">Mirando de lado</option>
               <option value="squint">Entrecerrados</option>
               <option value="surprised">Sorprendido</option>
-              <option value="wink" selected>Guiño</option>
+              <option value="wink">Guiño</option>
               <option value="winkWacky">Guiño loco</option>
               <option value="xDizzy">X / Mareado</option>
             </select>
@@ -125,8 +163,8 @@
           <div class="form-group">
             <label for="boca">Boca:</label>
             <select id="boca">
+              <option value="default" selected>Predeterminado</option>
               <option value="concerned">Preocupado</option>
-              <option value="default">Predeterminado</option>
               <option value="disbelief">Incrédulo</option>
               <option value="eating">Comiendo</option>
               <option value="grimace">Mueca</option>
@@ -134,45 +172,10 @@
               <option value="screamOpen">Gritando</option>
               <option value="serious">Serio</option>
               <option value="smile">Sonriendo</option>
-              <option value="tongue" selected>Sacando la lengua</option>
+              <option value="tongue">Sacando la lengua</option>
               <option value="twinkle">Brillante</option>
               <option value="vomit">Vómito</option>
             </select>
-          </div>
-
-          <div class="color-picker">
-            <label class="color-option" style="background-color: #b6e3f4">
-              <input type="radio" name="colorFondo" value="b6e3f4" checked />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #c0aede">
-              <input type="radio" name="colorFondo" value="c0aede" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #d1d4f9">
-              <input type="radio" name="colorFondo" value="d1d4f9" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #ffd5dc">
-              <input type="radio" name="colorFondo" value="ffd5dc" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #ffdfbf">
-              <input type="radio" name="colorFondo" value="ffdfbf" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #a8d0e6">
-              <input type="radio" name="colorFondo" value="a8d0e6" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #f3d1b0">
-              <input type="radio" name="colorFondo" value="f3d1b0" />
-              <span></span>
-            </label>
-            <label class="color-option" style="background-color: #f4f1d9">
-              <input type="radio" name="colorFondo" value="f4f1d9" />
-              <span></span>
-            </label>
           </div>
 
           <div class="form-group">
@@ -187,7 +190,7 @@
             </select>
           </div>
 
-          <div class="color-picker">
+          <div class="color-picker" id="colorBarba">
             <label class="color-option" style="background-color: #2c1b18">
               <input type="radio" name="colorBarba" value="2c1b18" checked />
               <span></span>
@@ -233,6 +236,7 @@
           <div class="form-group" id="pelo">
             <label for="cabello">Cabello:</label>
             <select id="cabello">
+              <option value="">Sin cabello</option>
               <option value="bigHair">Voluminoso</option>
               <option value="bob">Bob</option>
               <option value="bun">Moño</option>

@@ -20,6 +20,16 @@ window.addEventListener("load", () => {
     ocultarCabelloSombrero(e.target.value);
   });
 
+  ocultarColorBarba(document.getElementById("barba").value);
+  document.getElementById("barba").addEventListener("input", () => {
+    ocultarColorBarba(e.target.value);
+  });
+
+  ocultarColorCabello(document.getElementById("barba").value);
+  document.getElementById("cabello").addEventListener("input", () => {
+    ocultarColorCabello(e.target.value);
+  });
+
   // Escucha todos los elementos interactuables del formulario
   const elementosInteractuables = document.querySelectorAll("input, select, textarea");
 
@@ -50,7 +60,6 @@ function generarAvatar() {
   const probabilidadBarba = barba === "" ? "0" : "100";
 
   const gorroVal = document.getElementById("gorros").value;
-
   const sombrero = "&top=" + gorroVal;
   const colorSombrero = "&hatColor=" + document.querySelector('input[name="colorSombrero"]:checked')?.value;
   const pelo = gorroVal !== "" ? "" : "&top=" + document.getElementById("cabello").value;
@@ -65,7 +74,7 @@ function generarAvatar() {
   const colorRopa = "&clothesColor=" + document.querySelector('input[name="colorRopa"]:checked')?.value;
   const temaRopa = "&clothingGraphic=" + document.getElementById("tema").value;
 
-  const url = `https://api.dicebear.com/9.x/avataaars/svg?seed=${nombre}${colorSeleccionado}${voltear}${rotacion}${zoom}${cejas}${ojos}${boca}${colorGafas}${gafas}${barba}${colorBarba}${pelo}${colorPelo}${sombrero}${colorSombrero}&accessoriesProbability=${probabilidadGafas}${colorRopa}${ropa}${temaRopa}&facialHairProbability=${probabilidadBarba}&radius=50`;
+  const url = `https://api.dicebear.com/9.x/avataaars/svg?seed=${nombre}${colorSeleccionado}${voltear}${rotacion}${zoom}${colorPiel}${cejas}${ojos}${boca}${colorGafas}${gafas}${barba}${colorBarba}${pelo}${colorPelo}${sombrero}${colorSombrero}&accessoriesProbability=${probabilidadGafas}${colorRopa}${ropa}${temaRopa}&facialHairProbability=${probabilidadBarba}&radius=50`;
 
   fetch(url)
     .then((response) => response.text())
@@ -96,6 +105,22 @@ function ocultarCabelloSombrero(sombrero) {
     document.getElementById("colorCabello").style.display = "none";
   } else {
     document.getElementById("pelo").hidden = false;
+    document.getElementById("colorCabello").style.display = "flex";
+  }
+}
+
+function ocultarColorBarba(valor) {
+  if (valor == "") {
+    document.getElementById("colorBarba").style.display = "none";
+  } else {
+    document.getElementById("colorBarba").style.display = "flex";
+  }
+}
+
+function ocultarColorCabello(valor) {
+  if (valor == "") {
+    document.getElementById("colorCabello").style.display = "none";
+  } else {
     document.getElementById("colorCabello").style.display = "flex";
   }
 }
