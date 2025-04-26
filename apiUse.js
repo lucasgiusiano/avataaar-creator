@@ -26,10 +26,22 @@ window.addEventListener("load", () => {
   });
 
   ocultarColorCabello(document.getElementById("barba").value);
-  document.getElementById("cabello").addEventListener("input", () => {
+  document.getElementById("cabello").addEventListener("input", (e) => {
     ocultarColorCabello(e.target.value);
   });
 
+  ocultarColorGafas(document.getElementById("gafas").value);
+  document.getElementById("gafas").addEventListener("input", (e) => {
+    ocultarColorGafas(e.target.value);
+  });
+
+  ocultarColorSombrero(document.getElementById("gafas").value);
+  document.getElementById("gorros").addEventListener("input", (e) => {
+    ocultarColorSombrero(e.target.value);
+  });
+
+
+  
   // Escucha todos los elementos interactuables del formulario
   const elementosInteractuables = document.querySelectorAll("input, select, textarea");
 
@@ -122,6 +134,22 @@ function ocultarColorCabello(valor) {
     document.getElementById("colorCabello").style.display = "none";
   } else {
     document.getElementById("colorCabello").style.display = "flex";
+  }
+}
+
+function ocultarColorGafas(valor){
+  if (valor == "" || valor == "eyepatch") {
+    document.getElementById("colorGafas").style.display = "none";
+  } else {
+    document.getElementById("colorGafas").style.display = "flex";
+  }
+}
+
+function ocultarColorSombrero(valor){
+  if (valor == "") {
+    document.getElementById("colorSombrero").style.display = "none";
+  } else {
+    document.getElementById("colorSombrero").style.display = "flex";
   }
 }
 
