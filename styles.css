@@ -29,6 +29,13 @@ h2{
   text-align: center;
 }
 
+.container {
+  max-width: 100%; /* Asegura que no se desborde */
+  padding: 0 20px; /* Añade un pequeño padding a los costados */
+  box-sizing: border-box; /* Asegura que el padding no haga que se desborde */
+  margin: 0 auto; /* Centra el contenedor */
+}
+
 .colorPickerDistrubution {
   text-align: start;
   margin-top: 5px;
@@ -331,4 +338,25 @@ input[type="range"]::-ms-thumb {
 .svg-container:hover .download-btn {
   opacity: 1;
   pointer-events: auto;
+}
+
+/* MEDIA QUERIES - Responsive */
+@media (max-width: 768px) {
+  body {
+    padding: 40px 10px;
+  }
+
+  .personalizables {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .personalizable {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .slider-container {
+    width: 100%;
+  }
 }
